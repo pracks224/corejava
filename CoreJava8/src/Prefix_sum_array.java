@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
         import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Prefix_sum_array {
@@ -8,14 +9,14 @@ class Prefix_sum_array {
         int numTestCases = scanner.nextInt();
         while(numTestCases >0) {
             int arrnumSize = scanner.nextInt();
-            int[] numArr = new int[arrnumSize];
+            long[] numArr = new long[arrnumSize];
             scanner.nextLine(); // added
             String s = scanner.nextLine();
             String[] arr = s.split(" ");
             for(int i =0;i<arr.length;i++){
-                numArr[i] = Integer.parseInt(arr[i]);
+                numArr[i] = Long.parseLong(arr[i]);
             }
-           int[] convertedArr =  prefixSumArr(numArr);
+           long[] convertedArr =  prefixSumArr(numArr);
             for(int i =0;i<convertedArr.length;i++){
                System.out.print(" "+convertedArr[i]);
             }
@@ -24,47 +25,41 @@ class Prefix_sum_array {
 
     }
 
-   static int[] prefixSumArr(int[] numArr){
-        int[] changedArr = new int[numArr.length];
-        int largest = Integer.MIN_VALUE;
-        int secondLargest  = Integer.MIN_VALUE;
-        int thirdLargest = Integer.MIN_VALUE;
+   static long[] prefixSumArr(long[] numArr){
+        long[] changedArr = new long[numArr.length];
+        long first = Integer.MIN_VALUE, second = Integer.MIN_VALUE,third = Integer.MIN_VALUE;
+        long prefixSum = 0;
+         if(numArr.length<=2){
+             Arrays.fill(changedArr,-1);
+         }else{
+             changedArr[0] = -1;
+             changedArr[1] = -1;
+             for(int i =0;i< numArr.length;i++){
+                 long current = numArr[i];
+                 if(current>first){
+                     third = second;
+                     second = first;
+                     first = current;
+                    // prefixSum = third+second+first;
+                 }else if(current>second){
+                     third = second;
+                     second = current;
+                  //   prefixSum = third+second+first;
+                 }else if(current>third){
+                     third = current;
+                 }
+                 if(i >=2){
+                   //  System.out.println
+                     prefixSum = (long)third+second+first;
+                     changedArr[i] = prefixSum;
+                 }
 
-      for(int i =0;i< numArr.length;i++){
-          int current = numArr[i];
-          if(current>largest){
-              thirdLargest = secondLargest;
-              secondLargest = largest;
-              largest = current;
-          }else if(current>secondLargest){
-              thirdLargest = secondLargest;
-              secondLargest = current;
 
-          }else if (current>thirdLargest){
-              thirdLargest = current;
-          }
-      }
-      // System.out.println(largest+" "+secondLargest+" "+ thirdLargest);
-       boolean largestNumFound = false;
-       boolean secondlargestNumFound = false;
-       boolean thirdlargestNumFound = false;
-       for(int i =0;i< numArr.length;i++){
-           if(numArr[i] == largest ){
-               largestNumFound = true;
-           }else if(numArr[i] == secondLargest){
-               secondlargestNumFound = true;
-           }else if(numArr[i] == thirdLargest){
-               thirdlargestNumFound = true;
-           }
-           if(largestNumFound && thirdlargestNumFound && secondlargestNumFound){
-               changedArr[i] = secondLargest+ thirdLargest+largest;
-           }else if(thirdlargestNumFound && secondlargestNumFound){
-               changedArr[i] = secondLargest+ largest;
-           }else{
-               changedArr[i] = -1;
-           }
-       }
-
+             }
+         }
         return changedArr;
    }
 }
+
+//input :   31612 24956 1240 11424 2530 5566 25328 22007 9790 19914 4274 21313 493 2641 3477 24938 29757
+//output : -1 -1 57808 67992 67992 67992 81896 81896 81896 81896 81896 81896 81896 81896 81896 81896 86697
