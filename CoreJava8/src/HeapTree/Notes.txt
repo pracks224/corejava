@@ -1,0 +1,17 @@
+Heap Tree -> It's a complete binaray tree
+          -> Complete B.T -> Its a tree where each node is at same level except the leaf nodes and all the leaf nodes
+                             as left as possible
+         -> Heap Tree is a balance binray tree
+             Two Type Min H T
+                      -> M H T all the nodes sorted and greater then root node
+                                     20
+                                     /\
+                                    22 33
+                                    /\
+                                   41 42
+                     Max Heap Tree - Value of parent node is greater than or equal to its children
+                                   55
+                                   /\
+                                 11  33
+                                 /\
+                                9  8

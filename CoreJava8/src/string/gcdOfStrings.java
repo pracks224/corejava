@@ -1,4 +1,4 @@
-package com.leetcode.string;
+package string;
 
 public class gcdOfStrings {
     public static void main(String[] args) {

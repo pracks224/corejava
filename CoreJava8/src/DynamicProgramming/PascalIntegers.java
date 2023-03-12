@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PascalIntegers {
     public static void main(String[] args) {
-     System.out.println(generatePascal(6));
+     System.out.println(generatePascal(9));
     }
 
     public static List<List<Integer>> generatePascal(int n) {
