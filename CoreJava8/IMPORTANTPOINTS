@@ -1,0 +1,20 @@
+1. SUB ARRAY -> Contigious
+            -> The key observation fact for the count of the subarray is the number of ends position possible for
+            each index elements of the array can be (N – i), Therefore the count of the subarray for an array of
+            size N can be:
+            Count of Sub-arrays = (N) * (N + 1)
+                                 ---------------
+                                        2
+2. SUB SEQUENCE -> Differnt combination
+               -> The key observation fact for the count of the subsequence possible is each element of the array
+                  can be included in a subsequence or not. Therefore, the choice for each element is 2.
+                  Count of subsequences = 2 to the power N
+
+3. What is PRIME NUMBER
+1.   We first check if the number is less than 2 (since 1 is not considered a prime number), and return false in that case.
+     If the number is equal to 2, we return true, since 2 is the only even prime number.
+2.   Next, we use the bitwise AND operator (&) to check if the least significant bit of the number is 0.
+     If it is, then the number is even and therefore not prime.
+3.   If the number passes these two checks, we then use a for loop to check if the number is divisible by any
+     odd number between 3 and the square root of the number (inclusive). If it is, then the number is not prime
+     and we return false.

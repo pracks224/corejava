@@ -35,14 +35,17 @@ Post Order-> left right root
 BST
 IN ORDER TRAVERSAL ALWAYS SORTED
 
-
+Number of leave nodes in a complete binaray tree -->  (N+1)/2i
  */
 
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Map;
 
 public class TreeBasics {
     public static void main(String[] args) {
-
+      int[] nums = {4,3,2};
+     // Arrays.sort(nums, Comparator.reverseOrder());
     }
 }
