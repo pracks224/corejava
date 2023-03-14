@@ -45,7 +45,7 @@ public class LevelOrderTreeTraversal {
                 continue;
             }
             System.out.print(n1.val +" ");
-            if (n1.left != null)
+             if (n1.left != null)
                 qe.add(n1.left);
             if (n1.right != null)
                 qe.add(n1.right);
