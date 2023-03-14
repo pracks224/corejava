@@ -1,3 +1,5 @@
+package Array;
+
 public class reverse_array {
     public static void main(String[] args) {
         int[] intArr = {5,6,3,4,6,8,9};
