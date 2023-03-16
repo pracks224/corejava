@@ -2,7 +2,7 @@ package DynamicProgramming;
 
 public class BuySell {
     public static void main(String[] args) {
-        int[] trades = {7, 6,4,3,1};
+        int[] trades = {1, 6,4,3,7};
         System.out.println(maxProfit(trades));
     }
 

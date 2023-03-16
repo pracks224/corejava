@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringCompression {
     public static void main(String[] args) {
         char[] chars = {'a', 'a', 'b', 'b', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd', 'd'};
-        System.out.println(compressionConstantSpace(chars));
+        System.out.println(compression(chars));
     }
 
     //Compression using Extra space
